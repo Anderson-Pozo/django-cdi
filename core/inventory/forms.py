@@ -25,7 +25,7 @@ class MaterialForm(ModelForm):
                     'autocomplete': 'off'
                 }
             ),
-            'course': forms.Select(
+            'bodega_id': forms.Select(
                 attrs={
                     'class': 'form-control select2',
                     'style': 'width: 100%'

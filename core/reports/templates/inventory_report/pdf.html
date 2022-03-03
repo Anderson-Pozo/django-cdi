@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <style>
+        @page {
+            size: A4 portrait;
+            margin: 10mm;
+        }
+        .subheader-content {
+            font-size: 1.2em;
+            margin-top: 0;
+            text-align: center;
+        }
+        table, th, td {
+          border: 1px solid #0c0c0c;
+          border-collapse: collapse;
+          padding: 3px;
+          text-align: left;
+        }
+        table {
+            width: 100%;
+            table-layout: fixed;
+            overflow-wrap: break-word;
+            margin-bottom: 1rem;
+            color: #212529;
+            font-size: 13px;
+        }
+        table tbody tr td{
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+<div style="padding: 0; margin: 0;">
+    {% include 'shared/header_pdf.html' %}
+    <p class="subheader-content">
+        {% if bodega %} Bodega: {{ bodega.name }}<br> {% endif %}
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>Material</th>
+                <th>Descripción</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for d in data %}
+            <tr>
+                <td>{{ d.material }}</td>
+                <td>{{ d.material.description }}</td>
+                <td>{{ d.stock }}</td>
+                
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% include 'shared/footer_pdf.html' %}
+</div>
+</body>
+</html>

@@ -1,3 +1,5 @@
+from pyexpat import model
+from statistics import mode
 from django.conf import settings
 from django.db import models
 from datetime import datetime
@@ -9,19 +11,37 @@ from core.user.models import User
 from core.security.audit_mixin.mixin import AuditMixin
 
 
+class Bodega(AuditMixin, models.Model):
+    name =  models.CharField('Nombre', max_length=30, blank=True, null=True)
+    description = models.TextField('Descripción', blank=True, null=True)
+    fecha_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+            return self.name
+
+    def toJSON(self):
+        item = model_to_dict(self)
+        return item
+
+    class Meta:
+        verbose_name = 'Bodega'
+        verbose_name_plural = 'Bodegas'
+        ordering = ['id']
+
 class Material(AuditMixin, models.Model):
     name = models.CharField('Nombre', max_length=30, blank=True, null=True)
     description = models.TextField('Descripción', blank=True, null=True)
     image = models.ImageField('Imagen', upload_to='materials/%Y/%m/%d', null=True, blank=True)
-    course = models.ForeignKey(Cursos, on_delete=models.PROTECT, verbose_name='Curso')
-
+    bodega_id = models.ForeignKey(Bodega, on_delete=models.PROTECT, verbose_name='Bodega')
+    fecha_created = models.DateTimeField(auto_now_add=True)
+    
     class Meta:
         verbose_name = 'Material'
         verbose_name_plural = 'Materiales'
         ordering = ['-id']
 
     def __str__(self):
-        return '{} {}'.format(self.name, self.course)
+        return '{} {}'.format(self.name, self.bodega_id)
 
     def get_image(self):
         if self.image:
@@ -31,14 +51,15 @@ class Material(AuditMixin, models.Model):
     def toJSON(self):
         item = model_to_dict(self)
         item['image'] = self.get_image()
-        item['course'] = self.course.name
-        item['value'] = '{} - {}'.format(self.name, self.course.name)
+        item['bodega_id'] = self.bodega_id.name
+        item['value'] = '{} - {}'.format(self.name, self.bodega_id.name)
         return item
 
 
 class Entry(AuditMixin, models.Model):
     date_entry = models.DateField('Fecha de ingreso', default=datetime.now)
     employee = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Responsable')
+    fecha_created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'Entrada'
@@ -52,6 +73,7 @@ class EntryMaterial(AuditMixin, models.Model):
     entry = models.ForeignKey(Entry, on_delete=models.PROTECT)
     material = models.ForeignKey(Material, on_delete=models.PROTECT)
     amount = models.IntegerField('Cantidad', blank=True, null=True)
+    fecha_created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'Entrada material'
@@ -63,13 +85,14 @@ class EntryMaterial(AuditMixin, models.Model):
     def toJSON(self):
         item = model_to_dict(self)
         item['material'] = self.material.name
-        item['course'] = self.material.course.name
+        item['bodega_id'] = self.material.bodega_id.name
         return item
 
 
 class Inventory(AuditMixin, models.Model):
     material = models.ForeignKey(Material, on_delete=models.PROTECT)
     stock = models.IntegerField('Stock', blank=True, null=True)
+    fecha_created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'Inventario'
@@ -81,14 +104,15 @@ class Inventory(AuditMixin, models.Model):
     def toJSON(self):
         item = model_to_dict(self)
         item['material'] = self.material.toJSON()
-        item['course'] = self.material.course.name
-        item['value'] = '{} {}'.format(self.material.name, self.material.course.name)
+        item['bodega_id'] = self.material.bodega_id.name
+        item['value'] = '{} {}'.format(self.material.name, self.material.bodega_id.name)
         return item
 
 
 class Output(AuditMixin, models.Model):
     date_output = models.DateField('Fecha de salida', default=datetime.now)
     teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT, verbose_name='Docente')
+    fecha_created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'Salida'
@@ -102,6 +126,7 @@ class OutputMaterial(AuditMixin, models.Model):
     output = models.ForeignKey(Output, on_delete=models.PROTECT)
     material = models.ForeignKey(Material, on_delete=models.PROTECT)
     amount = models.IntegerField('Cantidad', blank=True, null=True)
+    fecha_created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'Salida material'
@@ -113,5 +138,5 @@ class OutputMaterial(AuditMixin, models.Model):
     def toJSON(self):
         item = model_to_dict(self)
         item['material'] = self.material.name
-        item['course'] = self.material.course.name
+        item['bodega_id'] = self.material.bodega_id.name
         return item

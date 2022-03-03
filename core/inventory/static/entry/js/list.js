@@ -18,7 +18,7 @@ $(function () {
             },
             columns: [
                 {data: "material"},
-                {data: "course"},
+                {data: "bodega_id"},
                 {data: "amount"},
             ],
             columnDefs: [

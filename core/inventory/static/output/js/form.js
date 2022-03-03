@@ -25,7 +25,7 @@ const items = {
             columns: [
                 {data: "material.id"},
                 {data: "material.name"},
-                {data: "course"},
+                {data: "bodega_id"},
                 {data: "cantidad"},
                 {data: "stock"}
             ],

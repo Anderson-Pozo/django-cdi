@@ -24,6 +24,7 @@ function getData() {
             {"data": "period.name"},
             {"data": "level.name"},
             {"data": "student.user.full_name"},
+            {"data": "student.user.dni"},            
             {"data": "id"},
             {"data": "id"},
         ],

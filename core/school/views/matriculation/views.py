@@ -11,7 +11,7 @@ from core.reports.forms import ReportForm
 from core.school.forms import Matriculation, MatriculationForm, PeriodDetail, MatriculationDetail, Period, Cursos, \
     Student
 from core.security.mixins import PermissionMixin
-from deep_translator import GoogleTranslator
+#from deep_translator import GoogleTranslator
 
 
 class MatriculationListView(PermissionMixin, FormView):
@@ -214,7 +214,9 @@ class MatriculationDeleteView(PermissionMixin, DeleteView):
         try:
             self.get_object().delete()
         except Exception as e:
-            data['error'] = GoogleTranslator(source='en', target='es').translate(text=str(e)) 
+            a='Imposible realizar esta acción, ya que esta matrícula se encuentra operativo'
+            #data['error'] = GoogleTranslator(source='en', target='es').translate(text=str(e)) 
+            data['error'] = a
         return HttpResponse(json.dumps(data), content_type='application/json')
 
     def get_context_data(self, **kwargs):

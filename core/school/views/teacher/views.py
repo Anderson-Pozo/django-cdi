@@ -22,7 +22,7 @@ from django.views import View
 from config import settings
 from core.school.forms import TeacherForm, User, Teacher, Parish, CVitae, CVitaeForm
 from core.security.mixins import ModuleMixin, PermissionMixin
-from deep_translator import GoogleTranslator
+#from deep_translator import GoogleTranslator
 
 
 class TeacherListView(PermissionMixin, TemplateView):
@@ -109,6 +109,7 @@ class TeacherCreateView(PermissionMixin, CreateView):
                     teacher.user_id = user.id
                     teacher.gender = request.POST['gender']
                     teacher.mobile = request.POST['mobile']
+                    teacher.email_institucional = request.POST['email_institucional']
                     teacher.phone = request.POST['phone']
                     teacher.address = request.POST['address']
                     teacher.birthdate = request.POST['birthdate']
@@ -123,6 +124,7 @@ class TeacherCreateView(PermissionMixin, CreateView):
                     teacher.civil_status = request.POST['civil_status']
                     teacher.blood_group = request.POST['blood_group']
                     teacher.disability = request.POST['disability']
+                    teacher.disability_percentage = request.POST['disability_percentage']
                     teacher.disability_type = request.POST['disability_type']
                     teacher.cat_illnesses = request.POST['cat_illnesses']
                     teacher.cat_illnesses_desc = request.POST['cat_illnesses_desc']
@@ -199,7 +201,9 @@ class TeacherDeleteView(PermissionMixin, DeleteView):
                 instance.delete()
                 user.delete()
         except Exception as e:
-            data['error'] = GoogleTranslator(source='en', target='es').translate(text=str(e)) 
+            a='Imposible realizar esta acción, ya que este profesor ya ha sido asignado a un curso'
+            #data['error'] = GoogleTranslator(source='en', target='es').translate(text=str(e)) 
+            data['error'] = a
         return HttpResponse(json.dumps(data), content_type='application/json')
 
     def get_context_data(self, **kwargs):
@@ -316,6 +320,7 @@ class GenericUpdateTeacher(UpdateView):
                     teacher.user_id = user.id
                     teacher.gender = request.POST['gender']
                     teacher.mobile = request.POST['mobile']
+                    teacher.email_institucional = request.POST['email_institucional']
                     teacher.phone = request.POST['phone']
                     teacher.address = request.POST['address']
                     teacher.birthdate = request.POST['birthdate']
@@ -329,6 +334,7 @@ class GenericUpdateTeacher(UpdateView):
                     teacher.civil_status = request.POST['civil_status']
                     teacher.blood_group = request.POST['blood_group']
                     teacher.disability = request.POST['disability']
+                    teacher.disability_percentage = request.POST['disability_percentage']
                     teacher.disability_type = request.POST['disability_type']
                     teacher.cat_illnesses = request.POST['cat_illnesses']
                     teacher.cat_illnesses_desc = request.POST['cat_illnesses_desc']

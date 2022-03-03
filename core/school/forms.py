@@ -600,6 +600,13 @@ class TeacherForm(ModelForm):
                     'autocomplete': 'off'
                 }
             ),
+            'email_institucional': forms.EmailInput(
+                attrs={
+                    'placeholder': 'Ingrese el correo institucional',
+                    'class': 'form-control',
+                    'autocomplete': 'off',
+                }
+            ),
             'phone': forms.TextInput(
                 attrs={
                     'placeholder': 'Ingrese su número convencional',
@@ -614,6 +621,7 @@ class TeacherForm(ModelForm):
                     'autocomplete': 'off',
                 }
             ),
+            
             # Additional data
             'reference': forms.TextInput(attrs={
                 'class': 'form-control', 'placeholder': 'Ingrese lugar de referencia'
@@ -640,6 +648,9 @@ class TeacherForm(ModelForm):
                 choices={(True, 'Sí'), (False, 'No')},
                 attrs={'class': 'form-control'}
             ),
+            'disability_percentage': forms.TextInput(attrs={
+                'class': 'form-control', 'placeholder': 'Ingrese el porcentaje de discapacidad'
+            }),
             'disability_type': forms.TextInput(attrs={
                 'class': 'form-control', 'placeholder': 'Ingrese tipo de discapacidad'
             }),

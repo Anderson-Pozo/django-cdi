@@ -12,7 +12,7 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView, F
 from core.reports.forms import ReportForm
 from core.school.forms import *
 from core.security.mixins import PermissionMixin, ModuleMixin
-from deep_translator import GoogleTranslator
+#from deep_translator import GoogleTranslator
 
 class PeriodListView(PermissionMixin, ListView):
     model = Period

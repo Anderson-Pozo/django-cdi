@@ -1,7 +1,6 @@
-let tblReport = null;
 let columns = [];
-let select_period;
-let select_course;
+let tblReport = null;
+let select_bodega;
 
 function initTable() {
     tblReport = $('#tblReport').DataTable({
@@ -18,8 +17,8 @@ function initTable() {
 function generateReport(all) {
     let parameters = {
         'action': 'search_report',
-        'period': select_period.val(),
-        'course': select_course.val()
+        'bodega': select_bodega.val()
+        
     };
 
     tblReport = $('#tblReport').DataTable({
@@ -80,10 +79,11 @@ function generateReport(all) {
             }
         ],
         columns: [
-            {data: "user.dni"},
-            //{data: "student.first_name"},
-            {data: "user.first_name"},
-            {data: "user.last_name"},
+            //{data: "id"},
+            {data: "material.name"},
+            {data: "material.description"},
+            //{data: "material.bodega_id"},
+            {data: "stock"},
         ],
         columnDefs: [
             {
@@ -106,21 +106,18 @@ function generateReport(all) {
 
 $(function () {
 
-    select_period = $('select[name="period"]');
-    select_course = $('select[name="course"]');
+    select_bodega = $('select[name="bodega"]');
 
     $('.select2').select2({
         theme: 'bootstrap4',
         language: "es",
     });
 
-    select_period.on('change', function () {
+    select_bodega.on('change', function () {
         generateReport();
     });
 
-    select_course.on('change', function () {
-        generateReport();
-    });
+    
 
     $('.drp-buttons').hide();
 

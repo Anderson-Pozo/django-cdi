@@ -3,11 +3,11 @@
   "model": "iniciopage.web",
   "pk": 1,
   "fields": {
-    "name": "UE MARCEL LANIADO DE WIND",
+    "name": "CDI",
     "ruc": "0918222134001",
     "mobile": "0729818811",
     "email": "uemarcel@hotmail.com",
-    "address": "PUERTO INCA, NARANJAL",
+    "address": "AV. UniversitariaL",
     "image": "company/2021/02/18/logo.png",
     "mission": "Sin detalles",
     "vision": "Sin detalles",

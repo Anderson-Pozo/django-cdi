@@ -6,33 +6,31 @@
     <script src="{% static 'lib/select2-4.0.13/js/i18n/es.js' %}"></script>
     <link rel="stylesheet" href="{% static 'lib/select2-4.0.13/css/select2.min.css' %}">
     <link rel="stylesheet" href="{% static 'lib/select2-4.0.13/css/select2-bootstrap4.min.css' %}">
-    <script src="{% static 'student_report/js/report.js' %}" type="text/javascript"></script>
+    <script src="{% static 'inventory_report/js/report.js' %}" type="text/javascript"></script>
 {% endblock %}
 {% block content_report %}
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="form-group">
-                <label>Período:</label>
-                {{ form.period }}
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="form-group">
-                <label>Nivel:</label>
-                {{ form.course }}
-            </div>
+
+<div class="row">
+    <div class="col-lg-3">
+        <div class="form-group">
+            <label>Bodega:</label>
+            {{ form.bodega }}
         </div>
     </div>
+    
+</div>
     <div class="row">
         <div class="col-lg-12">
             <hr>
             <table class="table table-bordered table-md" id="tblReport" width="100%">
                 <thead>
                 <tr>
-                    <th style="width: 15%;">Número de cédula</th>
-                    <!--<th style="width: 15%;">Representante</th>-->
-                    <th style="width: 15%;">Nombres</th>
-                    <th style="width: 15%;">Apellidos</th>
+                    <!--<th style="width: 15%;">id</th>
+                    <th style="width: 15%;">Número de cédula</th>-->
+                    <th style="width: 15%;">Nombre material</th>
+                    <th style="width: 15%;">Descripción</th>
+                    <!--<th style="width: 15%;">Bodega</th>-->
+                    <th style="width: 15%;">Stock</th>
                 </tr>
                 </thead>
                 <tbody></tbody>

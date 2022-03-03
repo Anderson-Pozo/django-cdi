@@ -3,6 +3,7 @@
 {% block columns %}
     <th>Nro</th>
     <th>Material</th>
+    <th>Bodega</th>
     <th class="text-center">Stock</th>
 {% endblock %}
 
@@ -10,7 +11,8 @@
     {% for i in object_list %}
         <tr>
             <td>{{ i.id }}</td>
-            <td>{{ i.material }}</td>
+            <td>{{ i.material.name }}</td>
+            <td>{{ i.material.bodega_id.name }}</td>
             <td class="text-center">
                 {% if i.stock == 0 %}
                     <span class="badge badge-danger">{{ i.stock }}</span>

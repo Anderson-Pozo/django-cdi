@@ -20,7 +20,7 @@ from config import settings
 from core.school.forms import StudentForm, User, Student, Parish, StudentMedicalRecord, LegalRepresentative, Family, \
     StudentMedicalRecordForm, LegalRepresentativeForm, FamilyForm, FamilyGroup
 from core.security.mixins import ModuleMixin, PermissionMixin
-from deep_translator import GoogleTranslator
+#from deep_translator import GoogleTranslator
 
 
 class StudentListView(PermissionMixin, TemplateView):
@@ -182,7 +182,10 @@ class StudentDeleteView(PermissionMixin, DeleteView):
                 instance.delete()
                 user.delete()
         except Exception as e:
-            data['error'] = GoogleTranslator(source='en', target='es').translate(text=str(e)) 
+            a='Imposible realizar esta acción, ya que este estudiante ya ha sido matriculado'
+            #data['error'] = GoogleTranslator(source='en', target='es').translate(text=str(e)) 
+            data['error'] = a
+
         return HttpResponse(json.dumps(data), content_type='application/json')
 
     def get_context_data(self, **kwargs):

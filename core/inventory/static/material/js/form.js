@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', function (e) {
                 }),
             },
             fields: {
-                course: {
+                bodega_id: {
                     validators: {
                         notEmpty: {
-                            message: 'Seleccione un nivel'
+                            message: 'Seleccione una bodega'
                         },
                     }
                 },
@@ -62,7 +62,7 @@ $(function () {
         language: "es"
     });
 
-    $('select[name="course"]').on('change', function () {
-        fv.revalidateField('course');
+    $('select[name="bodega_id"]').on('change', function () {
+        fv.revalidateField('bodega_id');
     });
 });

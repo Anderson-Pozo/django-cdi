@@ -4,15 +4,16 @@
 <div class="bg-light" >
     <div class="container" style="background-color: white;">
         <div class="row">
-            <div class="col col-lg-3">
-                <!-- <img src="{{ object.user.get_image }}" alt="teacher profile" class="img-thumbnail">-->
-                <img class="profile-user-img img-fluid img-circle" style="width:150px;"src="{{ object.user.get_image }}" alt="User profile picture">
-            </div>
             
-            <div class="col col-lg-7" >
-                <h5 style="font-family: 'Google Sans',Roboto,Arial,sans-serif;font-size: 1.5rem;font-weight: 400;letter-spacing: 0;line-height: 2.25rem;hyphens: auto;word-break: break-word;color: #202124;word-wrap: break-word;" class="h2 mt-3">{{ object.user.get_full_name }}</h5>
+            <div class="col col-lg-2">
+                <img src="{{ object.user.get_image }}" alt="student profile" class="img-thumbnail">
+            </div>
+            <div class="col col-lg-8" >
+                <!--
+                <h5 style="font-family: 'Google Sans',Roboto,Arial,sans-serif;letter-spacing: 0;line-height: 2.25rem;hyphens: auto;word-break: break-word;color: #202124;word-wrap: break-word;" class="h2 mt-3">{{ object.user.get_full_name }}</h5>
+                -->
+                <h3 style="font-family: 'Google Sans',Roboto,Arial,sans-serif;letter-spacing: 0;word-wrap: break-word;" >{{ object.user.get_full_name }}</h3>
                 <p class="h6 mt-3">Docente</p>
-
             </div>
             <div class="col col-lg-2" >
                 <p class="h6 mt-3"></p>
@@ -27,19 +28,23 @@
             <div class="card card-success" >
                 <div class="card-body">
             <p><b>Cédula</b>: {{ object.user.dni|default_if_none:"(Vacío)" }}</p>
-            <p><b>Correo electrócnico</b>: {{ object.user.email|default_if_none:"(Vacío)" }}</p>
-            <p><b>Edad: </b>{{ object.age|default_if_none:"(Vacío)" }} años</p>
+            <p><b>Correo electrócnico personal</b>: {{ object.user.email|default_if_none:"(Vacío)" }}</p>
+            <p><b>Correo electrócnico institucional</b>: {{ object.email_institucional|default_if_none:"(Vacío)" }}</p>
+           
+            
             <p><b>Fecha de nacimiento: </b>{{ object.birthdate|default_if_none:"(Vacío)" }}</p>
             <p><b>Celular: </b>{{ object.mobile|default_if_none:"(Vacío)" }}</p>
             <p><b>Teléfono convencional: </b>{{ object.phone|default_if_none:"(Vacío)" }}</p>
-            <p><b>Género: </b>{{ object.gender|default_if_none:"(Vacío)" }}</p>
             
             <p><b>Etnia: </b>{{ object.ethnicity|default_if_none:"(Vacío)" }}</p>
             <p><b>Religión: </b>{{ object.religion|default_if_none:"(Vacío)" }}</p>
-            <p><b>Estado civil: </b>{{ object.civil_status|default_if_none:"(Vacío)" }}</p>
             <p><b>Grupo sanguíneo: </b>{{ object.blood_group|default_if_none:"(Vacío)" }}</p>
+            <p><b>Nacionalidad: </b>{{ object.nationality |default_if_none:"(Vacío)"}}</p>
+
+            <p><b>Referencia: </b>{{ object.reference }}</p>
             <hr/>
             <p><b>Discapacidad: </b>{{ object.disability|yesno:"Sí,No" }}</p>
+            <p><b>Porcentaje de discapacidad: </b>{{ object.disability_percentage|default_if_none:"(Vacío)" }} %</p>
             <p><b>Tipo de discapacidad: </b>{{ object.disability_type|default_if_none:"(Vacío)" }}</p>
             <p><b>Enfermedades catastróficas: </b>{{ object.cat_illnesses|yesno:"Sí,No" }}</p>
             <p><b>Descripción. enfermedades catastróficas: </b>{{ object.cat_illnesses_desc }}</p>
@@ -49,17 +54,19 @@
         <div class="col col-lg-6" style="font-family: "Open Sans", sans-serif;text-transform: uppercase;font-size: .7475rem;letter-spacing: .07272727em;hyphens: auto;word-break: break-word;word-wrap: break-word;color: #202124">
             <div class="card card-success">
                 <div class="card-body">
+            <p><b>Edad: </b>{{ object.age|default_if_none:"(Vacío)" }} años</p>
+            <p><b>Género: </b>{{ object.gender|default_if_none:"(Vacío)" }}</p>
+            <p><b>Estado civil: </b>{{ object.civil_status|default_if_none:"(Vacío)" }}</p>
+        
             <p><b>País: </b>{{ object.parish.canton.province.country.name }}</p>
             <p><b>Provincia: </b>{{ object.parish.canton.province.name }}</p>
             <p><b>Cantón: </b>{{ object.parish.canton.name }}</p>
             <p><b>Parroquia: </b>{{ object.parish.name }}</p>
             <p><b>Dirección: </b>{{ object.address }}</p>
-            <p><b>Nacionalidad: </b>{{ object.nationality |default_if_none:"(Vacío)"}}</p>
-
-            <p><b>Referencia: </b>{{ object.reference }}</p>
+            
                 </div>
             </div>
-            <hr/>
+            
             <div class="w-50">
                 
                 <a href="{{ object.get_cv_doc }}" target="_blank" class="btn btn-success btn-sm btn-flat mt-2 w-100">

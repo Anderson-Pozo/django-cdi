@@ -9,6 +9,8 @@ from core.reports.views.assistance_report.student.views import AssistanceStudent
 from core.reports.views.student.views import StudentReportView
 from core.reports.views.teachers_report.views import TeachersReportView
 from core.reports.views.grades_report.views import GradesReportView
+from core.reports.views.inventory_report.views import InventoryReportView
+
 
 urlpatterns = [
     #path('school/feeding/', SchoolFeedingReportView.as_view(), name='schoolfeeding_report'),
@@ -21,5 +23,6 @@ urlpatterns = [
     path('student/', StudentReportView.as_view(), name='student_report'),
     path('teachers/', TeachersReportView.as_view(), name='teachers_report'),
     path('grades/', GradesReportView.as_view(), name='grades_report'),
+    path('inventory/', InventoryReportView.as_view(), name='inventory_report'),
 
 ]

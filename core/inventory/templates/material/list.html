@@ -5,7 +5,9 @@
     <th>Nombre</th>
     <th>Descripción</th>
     <th>Imagen</th>
-    <th>Nivel</th>
+    <th>Bodega</th>
+    <th>Fecha registro</th>
+
     <th class="text-center">Opciones</th>
 {% endblock %}
 
@@ -16,10 +18,12 @@
             <td>{{ i.name }}</td>
             <td>{{ i.description|truncatewords:5 }}</td>
             <td>
-                <img class="img-fluid mx-auto d-block" style="width: 20px; height: 20px;"
+                <img class="img-fluid mx-auto d-block" style="width: 35px; height: 35px;"
                      src={{ i.get_image }}>
             </td>
-            <td>{{ i.course }}</td>
+            <td>{{ i.bodega_id }}</td>
+            <td>{{ i.fecha_created}}</td>
+
             <td class="text-center">
                 <a href="{% url 'update_material' i.id %}" data-toggle="tooltip" title="Editar registro"
                    class="btn btn-warning btn-xs btn-flat">

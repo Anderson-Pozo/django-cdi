@@ -52,13 +52,18 @@
                     <td>{{ data.user.last_name|default_if_none:"(Vacío)" }}</td>
                 </tr>
                 -->
-                <tr>
-                    <td><b>Correo electrónico</b></td>
-                    <td>{{ data.user.email|default_if_none:"(Vacío)" }}</td>
-                </tr>
+                
                 <tr>
                     <td><b>Cédula</b></td>
                     <td>{{ data.user.dni|default_if_none:"(Vacío)" }}</td>
+                </tr>
+                <tr>
+                    <td><b>Correo electrónico personal</b></td>
+                    <td>{{ data.user.email|default_if_none:"(Vacío)" }}</td>
+                </tr>
+                <tr>
+                    <td><b>Correo electrónico institucional</b></td>
+                    <td>{{ data.email_institucional|default_if_none:"(Vacío)" }}</td>
                 </tr>
                 <tr>
                     <td><b>Género</b></td>

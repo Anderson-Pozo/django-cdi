@@ -1,6 +1,9 @@
 from django import forms
+from core.inventory.models import Inventory
+from core.inventory.models import Bodega
 
 from core.school.models import *
+from core.reports.models import *
 
 
 class ReportForm(forms.Form):
@@ -50,5 +53,13 @@ class ReportForm(forms.Form):
         'style': 'width: 100%;'
     }))
 
+    inventory = forms.ModelChoiceField(queryset=Inventory.objects.all(), widget=forms.Select(attrs={
+        'class': 'form-control select2',
+        'style': 'width: 100%;'
+    }))
 
+    bodega = forms.ModelChoiceField(queryset=Bodega.objects.all(), widget=forms.Select(attrs={
+        'class': 'form-control select2',
+        'style': 'width: 100%;'
+    }))
 

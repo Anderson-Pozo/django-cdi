@@ -154,6 +154,7 @@ class Teacher(AuditMixin, models.Model):
     user = models.OneToOneField(User, on_delete=models.PROTECT)
     gender = models.CharField(max_length=10, choices=gender_person,  verbose_name='Género')#default=gender_person[0][0],
     mobile = models.CharField(max_length=10, unique=True, verbose_name='Teléfono celular')
+    email_institucional = models.EmailField(max_length=50, null=True, blank=True, default=False,verbose_name="Correo institucional")
     phone = models.CharField(max_length=10, null=True, blank=True, verbose_name='Teléfono convencional')
     birthdate = models.DateField(default=datetime.now, verbose_name='Fecha de nacimiento')
     parish = models.ForeignKey(Parish, on_delete=models.PROTECT, null=True, blank=True, verbose_name='Lugar residencia')

@@ -38,7 +38,7 @@
         <h1>Datos del Estudiante</h1>
         <div style="padding: 0; margin: 0;">
             <div class="card-body">
-                <table  cellpadding="10">
+                <table  cellpadding="3">
                     <tr>
                         <td><b>{{ data.user.first_name|default_if_none:"(Vacío)" }} {{ data.user.last_name|default_if_none:"(Vacío)" }}</b></td>
                         <td><img class="imagenx"height="130px" width="90px" src="{{ data.user.image.path }}"></td>
@@ -62,7 +62,7 @@
                     </tr>
                     <tr>
                         <td><b>Edad</b></td>
-                        <td>{{ data.age|default_if_none:"(Vacío)" }}</td>
+                        <td>{{ data.age|default_if_none:"(Vacío)" }} años</td>
                     </tr>
                     <tr>
                         <td><b>Étnia</b></td>
@@ -115,7 +115,7 @@
             </div>
             <h1>Datos del Representante </h1>
             <div class="card-body">
-                <table cellpadding="10">
+                <table cellpadding="3">
                     <tr>
                         <td><b>{{ repre.first_name_rp|default_if_none:"(Vacío)" }} {{ repre.last_name_rp|default_if_none:"(Vacío)" }}</b></td>
                         <td><img class="imagenx"height="130px" width="90px" src="{{ data.user.image.path }}"></td>
@@ -196,7 +196,7 @@
             </div>
             <h1>Ficha Médica del Estudiante</h1>
             <div class="card-body">
-                <table cellpadding="10">
+                <table cellpadding="3">
                 
                     <tr>
                         <td><b>Peso</b></td>

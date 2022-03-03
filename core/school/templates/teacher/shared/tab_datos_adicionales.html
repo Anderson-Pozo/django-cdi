@@ -1,6 +1,12 @@
 <div class="row">
     <div class="col-lg-3">
         <div class="form-group">
+            <label>{{ form.email_institucional.label }}:</label>
+            {{ form.email_institucional }}
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="form-group">
             <label>{{ form.nationality.label }}:</label>
             {{ form.nationality }}
         </div>
@@ -17,39 +23,57 @@
             {{ form.ethnicity }}
         </div>
     </div>
-    <div class="col-lg-3">
+    
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-lg-4">
         <div class="form-group">
             <label>{{ form.religion.label }}:</label>
             {{ form.religion }}
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-lg-3">
+    <div class="col-lg-4">
         <div class="form-group">
             <label>{{ form.civil_status.label }}:</label>
             {{ form.civil_status }}
         </div>
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-4">
         <div class="form-group">
             <label>{{ form.blood_group.label }}:</label>
             {{ form.blood_group }}
         </div>
     </div>
-    <div class="col-lg-3">
+</div>
+
+<div class="row">
+    
+    <div class="col-lg-4">
         <div class="form-group">
             <label>{{ form.disability.label }}:</label>
             {{ form.disability }}
         </div>
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-4">
+        <div class="form-group">
+            <label>{{ form.disability_percentage.label }}:</label>
+            {{ form.disability_percentage }}
+        </div>
+    </div>
+    <div class="col-lg-4">
         <div class="form-group">
             <label>{{ form.disability_type.label }}:</label>
             {{ form.disability_type }}
         </div>
     </div>
 </div>
+
+
+
 <div class="row">
     <div class="col-lg-6">
         <div class="form-group">

@@ -8,7 +8,7 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 from core.school.forms import CursosForm, Cursos
 from core.security.mixins import PermissionMixin
-from deep_translator import GoogleTranslator
+#from deep_translator import GoogleTranslator
 
 
 class CursosListView(PermissionMixin, ListView):
