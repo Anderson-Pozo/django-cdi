@@ -79,8 +79,7 @@
         </div>
     
     </div>
-    <apan class="widget-user-desc">
-            
+    <span class="widget-user-desc">
         Tu último acceso fue {{ request.user.last_login }}
     </span>
     
@@ -173,7 +172,6 @@
             <div class="card card-white shadow-lg">
                 <div class="container-fluid"></div>
                     <div id="container"></div>
-                    
             </div>
                 
         </div>
@@ -408,10 +406,10 @@
                 type: 'pie'
             },
             title: {
-                text: 'Materiales-Stock'
+                text: 'Cursos-Docentes'
             },
             tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                {#pointFormat: '<b>{series.name}</b>'#}
             },
             accessibility: {
                 point: {
@@ -424,14 +422,14 @@
                     cursor: 'pointer',
                     dataLabels: {
                         enabled: true,
-                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        format: '<b>{point.name}</b>'
                     }
                 }
             },
             series: [{
-                name: 'Porcentaje',
+                name: 'Docentes',
                 colorByPoint: true,
-                data: {{ get_total_inventory|safe }}
+                data: {{ get_total_levels|safe }}
             }]
         });
     </script>
