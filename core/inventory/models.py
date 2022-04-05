@@ -4,7 +4,7 @@ from datetime import datetime
 
 from django.forms import model_to_dict
 
-from core.school.models import Cursos, Teacher
+from core.school.models import Cursos, Teacher, Student
 from core.user.models import User
 from core.security.audit_mixin.mixin import AuditMixin
 
@@ -67,6 +67,8 @@ class Entry(AuditMixin, models.Model):
     num_doc = models.CharField('Nº de documento', null=True, blank=True, max_length=30, default=generate_entry_num_doc)
     date_entry = models.DateField('Fecha de ingreso', default=datetime.now)
     employee = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Responsable')
+    donor = models.ForeignKey(Student, on_delete=models.PROTECT, verbose_name='Donante', null=True)
+    is_donation = models.BooleanField(null=True, blank=True, default=False, verbose_name='Donación')
     fecha_created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -96,6 +98,10 @@ class EntryMaterial(AuditMixin, models.Model):
         item['description'] = self.material.description
         return item
 
+    def return_represent(self):
+        if self.entry.donor:
+            return self.entry.donor.get_repr()
+
     def to_json_movements(self):
         item = {
             'id_material': self.material.id,
@@ -106,6 +112,11 @@ class EntryMaterial(AuditMixin, models.Model):
             'employee_teacher': self.entry.employee.get_full_name(),
             'num_doc': self.entry.num_doc,
             'type': 'Entry',
+            'type_entry': 'Donación' if self.entry.is_donation else 'Compra',
+            'donor': {
+                'student': self.entry.donor.__str__(),
+                'repres': self.return_represent(),
+            }
         }
         return item
 
@@ -198,7 +209,9 @@ class OutputMaterial(AuditMixin, models.Model):
             'employee_teacher': self.output.teacher.user.get_full_name(),
             'num_doc': self.output.num_doc,
             'type': 'Output',
-            'refunds': self.get_refund_outputmaterial()
+            'refunds': self.get_refund_outputmaterial(),
+            'type_entry': '',
+            'donor': {},
         }
         return item
 

@@ -57,6 +57,7 @@ function getMovementsData(all) {
             {data: "amount_entry"},
             {data: "amount_output"},
             {data: "employee_teacher"},
+            {data: "type_entry"},
         ],
         columnDefs: [
             {
@@ -74,10 +75,21 @@ function getMovementsData(all) {
                 }
             },
             {
-                targets: [1, -2, -3],
+                targets: [1, -2, -3, -4],
                 orderable: false,
                 class: 'text-center',
                 render: (data, type, row) => data,
+            },
+            {
+                targets: [-1],
+                render: (data, type, row) => {
+                    if (row.type_entry === 'Donación'){
+                        return `<span data-toggle="tooltip" title="Repr: ${ row.donor.repres }">
+                                    ${ row.donor.student }
+                                </span>`
+                    }
+                    return data
+                }
             }
         ],
         rowCallback: function (row, data, index) {

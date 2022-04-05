@@ -10,6 +10,7 @@
     <th>Nº documento</th>
     <th>Fecha</th>
     <th>Responsable</th>
+    <th>Tipo</th>
     <th class="text-center">Opciones</th>
 {% endblock %}
 
@@ -20,6 +21,15 @@
             <td>{{ i.num_doc }}</td>
             <td>{{ i.date_entry }}</td>
             <td>{{ i.employee }}</td>
+            <td>
+                {% if i.donor %}
+                    <span data-toggle="tooltip" title="Repr: {{ i.donor.get_repr }}">
+                       {{ i.donor }}
+                    </span>
+                {% else %}
+                    <span>Compra</span>
+                {% endif %}
+            </td>
             <td class="text-center">
                 <a rel="details" data-toggle="tooltip" title="Ver detalles"
                    class="btn btn-info btn-xs btn-flat">

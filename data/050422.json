@@ -504,6 +504,14 @@
   }
 },
 {
+  "model": "contenttypes.contenttype",
+  "pk": 64,
+  "fields": {
+    "app_label": "inventory",
+    "model": "refundoutputmaterial"
+  }
+},
+{
   "model": "sessions.session",
   "pk": "08mtja1gc0hnhg71wwuyyznzzmy7mlx2",
   "fields": {
@@ -613,6 +621,14 @@
   "fields": {
     "session_data": "Yzk2NTIxNmMwMDVhODJmZmI1NjBjZWYzMWIwNzZmYjc5NDVjYzNmZjqABZWYAgAAAAAAAH2UKIwNX2F1dGhfdXNlcl9pZJSMATiUjBJfYXV0aF91c2VyX2JhY2tlbmSUjClkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZJSMD19hdXRoX3VzZXJfaGFzaJSMKGY3M2VkZTUwMDNmNThmOTAyODA3ZmQwNzNiMzZlZjZlY2UyNGIxZjWUjAVncm91cJSMFWRqYW5nby5kYi5tb2RlbHMuYmFzZZSMDm1vZGVsX3VucGlja2xllJOUjARhdXRolIwFR3JvdXCUhpSFlFKUfZQojAZfc3RhdGWUaAiMCk1vZGVsU3RhdGWUk5QpgZR9lCiMBmFkZGluZ5SJjAJkYpSMB2RlZmF1bHSUdWKMAmlklEsCjARuYW1llIwIUHJvZmVzb3KUjA9fZGphbmdvX3ZlcnNpb26UjAYyLjIuMTKUdWKMBm1vZHVsZZRoCowIc2VjdXJpdHmUjAZNb2R1bGWUhpSFlFKUfZQojAZfc3RhdGWUaBMpgZR9lChoFoloF4wHZGVmYXVsdJR1YowCaWSUSwOMA3VybJSMHy9zY2hvb2wvdGVhY2hlci91cGRhdGUvcHJvZmlsZS+UjARuYW1llIwNRWRpdGFyIHBlcmZpbJSMDW1vZHVsZXR5cGVfaWSUTowLZGVzY3JpcHRpb26UjCxQZXJtaXRlIGNhbWJpYXIgbGEgaW5mb3JtYWNpw7NuIGRlIHR1IGN1ZW50YZSMBGljb26UjAtmYXMgZmEtdXNlcpSMBWltYWdllIwAlIwLaXNfdmVydGljYWyUiYwJaXNfYWN0aXZllIiMCmlzX3Zpc2libGWUiIwPX2RqYW5nb192ZXJzaW9ulIwGMi4yLjEylHVidS4=",
     "expire_date": "2022-01-11T05:21:55.441"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "6i7ipyj7j1nqdpssxbnc363tx12soupd",
+  "fields": {
+    "session_data": "OWIwYWExNWI2MGZjZmIyNTkwNDg5ODRmNDAwMmRlMDE2YWU1ODk1YjqABZWfAgAAAAAAAH2UKIwNX2F1dGhfdXNlcl9pZJSMATKUjBJfYXV0aF91c2VyX2JhY2tlbmSUjClkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZJSMD19hdXRoX3VzZXJfaGFzaJSMKDllMWJmZDQ4MzI2ZjViZjkxNjlkZTJjNjQ0MTZlZDk0Yzc3ZjU0NzGUjAVncm91cJSMFWRqYW5nby5kYi5tb2RlbHMuYmFzZZSMDm1vZGVsX3VucGlja2xllJOUjARhdXRolIwFR3JvdXCUhpSFlFKUfZQojAZfc3RhdGWUaAiMCk1vZGVsU3RhdGWUk5QpgZR9lCiMBmFkZGluZ5SJjAJkYpSMB2RlZmF1bHSUdWKMAmlklEsBjARuYW1llIwNQWRtaW5pc3RyYWRvcpSMD19kamFuZ29fdmVyc2lvbpSMBjIuMi4xMpR1YowGbW9kdWxllGgKjAhzZWN1cml0eZSMBk1vZHVsZZSGlIWUUpR9lCiMBl9zdGF0ZZRoEymBlH2UKGgWiWgXaBh1YowCaWSUSzKMA3VybJSMES9pbnZlbnRvcnkvZW50cnkvlIwEbmFtZZSMCEVudHJhZGFzlIwNbW9kdWxldHlwZV9pZJRLCIwLZGVzY3JpcHRpb26UjBVFbnRyYWRhIGRlIG1hdGVyaWFsZXOUjARpY29ulIwSZmFzIGZhLWZpbGUtaW1wb3J0lIwFaW1hZ2WUjACUjAtpc192ZXJ0aWNhbJSIjAlpc19hY3RpdmWUiIwKaXNfdmlzaWJsZZSIjAhwb3NpdGlvbpRLAowPX2RqYW5nb192ZXJzaW9ulIwGMi4yLjEylHVijAh1cmxfbGFzdJSMES9pbnZlbnRvcnkvZW50cnkvlHUu",
+    "expire_date": "2022-04-19T12:56:06.591"
   }
 },
 {
@@ -1037,14 +1053,6 @@
   "fields": {
     "session_data": "Y2I4ZTc3ODJlMjU4OGY0NjMxYTE0OWE1ZWVmMDIzYzQyNjdmNzhkYzqABJVXAQAAAAAAAH2UKIwNX2F1dGhfdXNlcl9pZJSMATGUjBJfYXV0aF91c2VyX2JhY2tlbmSUjClkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZJSMD19hdXRoX3VzZXJfaGFzaJSMKDY4MTFiNTZmZTAwYzQyNTg0OTNkZGJjM2E3ZGFkYTEwMDAzZWRmYmaUjAVncm91cJSMFWRqYW5nby5kYi5tb2RlbHMuYmFzZZSMDm1vZGVsX3VucGlja2xllJOUjARhdXRolIwFR3JvdXCUhpSFlFKUfZQojAZfc3RhdGWUaAiMCk1vZGVsU3RhdGWUk5QpgZR9lCiMBmFkZGluZ5SJjAJkYpSMB2RlZmF1bHSUdWKMAmlklEsBjARuYW1llIwNQWRtaW5pc3RyYWRvcpSMD19kamFuZ29fdmVyc2lvbpSMBTMuMC4zlHVidS4=",
     "expire_date": "2021-04-06T15:51:38.161"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "xl0959bx7xlhx2eu8cuxh1pjh32odreh",
-  "fields": {
-    "session_data": "MjNiMTA5MDA2ZGRkODM4YTk1NzU5MzYxMTY5ZjQ2OTU5ODljMzM4ODqABZWeAgAAAAAAAH2UKIwNX2F1dGhfdXNlcl9pZJSMATKUjBJfYXV0aF91c2VyX2JhY2tlbmSUjClkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZJSMD19hdXRoX3VzZXJfaGFzaJSMKDllMWJmZDQ4MzI2ZjViZjkxNjlkZTJjNjQ0MTZlZDk0Yzc3ZjU0NzGUjAVncm91cJSMFWRqYW5nby5kYi5tb2RlbHMuYmFzZZSMDm1vZGVsX3VucGlja2xllJOUjARhdXRolIwFR3JvdXCUhpSFlFKUfZQojAZfc3RhdGWUaAiMCk1vZGVsU3RhdGWUk5QpgZR9lCiMBmFkZGluZ5SJjAJkYpSMB2RlZmF1bHSUdWKMAmlklEsBjARuYW1llIwNQWRtaW5pc3RyYWRvcpSMD19kamFuZ29fdmVyc2lvbpSMBjIuMi4xMpR1YowGbW9kdWxllGgKjAhzZWN1cml0eZSMBk1vZHVsZZSGlIWUUpR9lCiMBl9zdGF0ZZRoEymBlH2UKGgWiWgXaBh1YowCaWSUSzOMA3VybJSMEi9pbnZlbnRvcnkvb3V0cHV0L5SMBG5hbWWUjAdTYWxpZGFzlIwNbW9kdWxldHlwZV9pZJRLCIwLZGVzY3JpcHRpb26UjBNTYWxpZGEgZGUgcHJvZHVjdG9zlIwEaWNvbpSMEmZhcyBmYS1maWxlLWV4cG9ydJSMBWltYWdllIwAlIwLaXNfdmVydGljYWyUiIwJaXNfYWN0aXZllIiMCmlzX3Zpc2libGWUiIwIcG9zaXRpb26USwGMD19kamFuZ29fdmVyc2lvbpSMBjIuMi4xMpR1YowIdXJsX2xhc3SUjBIvaW52ZW50b3J5L291dHB1dC+UdS4=",
-    "expire_date": "2022-03-31T15:58:07.551"
   }
 },
 {
@@ -17750,11 +17758,61 @@
   }
 },
 {
+  "model": "inventory.entrymaterial",
+  "pk": 21,
+  "fields": {
+    "entry": 7,
+    "material": 2,
+    "amount": 6,
+    "fecha_created": "2022-03-21T22:49:04.105"
+  }
+},
+{
+  "model": "inventory.entrymaterial",
+  "pk": 22,
+  "fields": {
+    "entry": 7,
+    "material": 1,
+    "amount": 4,
+    "fecha_created": "2022-03-21T22:49:04.105"
+  }
+},
+{
+  "model": "inventory.entrymaterial",
+  "pk": 23,
+  "fields": {
+    "entry": 8,
+    "material": 2,
+    "amount": 4,
+    "fecha_created": "2022-03-21T23:02:12.808"
+  }
+},
+{
+  "model": "inventory.entrymaterial",
+  "pk": 24,
+  "fields": {
+    "entry": 8,
+    "material": 1,
+    "amount": 3,
+    "fecha_created": "2022-03-21T23:02:12.808"
+  }
+},
+{
+  "model": "inventory.entrymaterial",
+  "pk": 25,
+  "fields": {
+    "entry": 9,
+    "material": 2,
+    "amount": 4,
+    "fecha_created": "2022-03-21T23:15:52.611"
+  }
+},
+{
   "model": "inventory.inventory",
   "pk": 10,
   "fields": {
     "material": 2,
-    "stock": 7,
+    "stock": 21,
     "fecha_created": "2022-03-17T15:57:20.383"
   }
 },
@@ -17763,7 +17821,7 @@
   "pk": 11,
   "fields": {
     "material": 1,
-    "stock": 8,
+    "stock": 15,
     "fecha_created": "2022-03-17T15:57:20.387"
   }
 },
@@ -21100,6 +21158,42 @@
     "name": "Can view Bodega",
     "content_type": 63,
     "codename": "view_bodega"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 366,
+  "fields": {
+    "name": "Can add Devoluci\u00f3n",
+    "content_type": 64,
+    "codename": "add_refundoutputmaterial"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 367,
+  "fields": {
+    "name": "Can change Devoluci\u00f3n",
+    "content_type": 64,
+    "codename": "change_refundoutputmaterial"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 368,
+  "fields": {
+    "name": "Can delete Devoluci\u00f3n",
+    "content_type": 64,
+    "codename": "delete_refundoutputmaterial"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 369,
+  "fields": {
+    "name": "Can view Devoluci\u00f3n",
+    "content_type": 64,
+    "codename": "view_refundoutputmaterial"
   }
 },
 {
@@ -24911,7 +25005,7 @@
   "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$150000$udGvXstbSFZm$Xyqa0A9oMO1abT3fKN2eJxNLHTfjPzjObPKi1V8Jk50=",
-    "last_login": "2022-03-17T15:50:14.906",
+    "last_login": "2022-04-05T12:55:35.963",
     "is_superuser": true,
     "username": "0401798477",
     "first_name": "Carlos Miguel",
@@ -24925,7 +25019,7 @@
     "is_change_password": false,
     "token": "0e873320-f49c-4f97-9c39-f1fff11b65ff",
     "failed_attempts": 0,
-    "last_login_attempt": "2022-03-17",
+    "last_login_attempt": "2022-04-05",
     "is_new": false,
     "groups": [
       1
@@ -26230,7 +26324,45 @@
     "num_doc": "E001",
     "date_entry": "2022-03-17",
     "employee": 2,
+    "donor": null,
+    "is_donation": false,
     "fecha_created": "2022-03-17T15:57:20.376"
+  }
+},
+{
+  "model": "inventory.entry",
+  "pk": 7,
+  "fields": {
+    "num_doc": "E002",
+    "date_entry": "2022-03-21",
+    "employee": 2,
+    "donor": null,
+    "is_donation": false,
+    "fecha_created": "2022-03-21T22:49:03.981"
+  }
+},
+{
+  "model": "inventory.entry",
+  "pk": 8,
+  "fields": {
+    "num_doc": "E003",
+    "date_entry": "2022-03-21",
+    "employee": 2,
+    "donor": 9,
+    "is_donation": true,
+    "fecha_created": "2022-03-21T23:02:12.688"
+  }
+},
+{
+  "model": "inventory.entry",
+  "pk": 9,
+  "fields": {
+    "num_doc": "E004",
+    "date_entry": "2022-03-21",
+    "employee": 2,
+    "donor": 13,
+    "is_donation": true,
+    "fecha_created": "2022-03-21T23:15:52.603"
   }
 },
 {
@@ -28379,6 +28511,17 @@
   }
 },
 {
+  "model": "security.accessusers",
+  "pk": 196,
+  "fields": {
+    "user": 2,
+    "date_joined": "2022-04-05",
+    "hour": "12:55:36.048",
+    "localhost": "172.29.208.1",
+    "hostname": "DESKTOP-MSGDUCO"
+  }
+},
+{
   "model": "admin.logentry",
   "pk": 934,
   "fields": {
@@ -28842,6 +28985,110 @@
     "content_type": 52,
     "object_id": "11",
     "object_repr": "Mapa mundi - 8 (inventory)",
+    "action_flag": 2,
+    "change_message": "Edici\u00f3n"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 970,
+  "fields": {
+    "action_time": "2022-03-21T22:49:03.986",
+    "user": 2,
+    "content_type": 50,
+    "object_id": "7",
+    "object_repr": "Carlos Miguel Mendez Lomas / 0401798477 2022-03-21 (entry)",
+    "action_flag": 1,
+    "change_message": "Creaci\u00f3n"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 971,
+  "fields": {
+    "action_time": "2022-03-21T22:49:04.097",
+    "user": 2,
+    "content_type": 52,
+    "object_id": "10",
+    "object_repr": "Diccionario did\u00e1ctico - 13 (inventory)",
+    "action_flag": 2,
+    "change_message": "Edici\u00f3n"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 972,
+  "fields": {
+    "action_time": "2022-03-21T22:49:04.103",
+    "user": 2,
+    "content_type": 52,
+    "object_id": "11",
+    "object_repr": "Mapa mundi - 12 (inventory)",
+    "action_flag": 2,
+    "change_message": "Edici\u00f3n"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 973,
+  "fields": {
+    "action_time": "2022-03-21T23:02:12.799",
+    "user": 2,
+    "content_type": 50,
+    "object_id": "8",
+    "object_repr": "Carlos Miguel Mendez Lomas / 0401798477 2022-03-21 (entry)",
+    "action_flag": 1,
+    "change_message": "Creaci\u00f3n"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 974,
+  "fields": {
+    "action_time": "2022-03-21T23:02:12.804",
+    "user": 2,
+    "content_type": 52,
+    "object_id": "10",
+    "object_repr": "Diccionario did\u00e1ctico - 17 (inventory)",
+    "action_flag": 2,
+    "change_message": "Edici\u00f3n"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 975,
+  "fields": {
+    "action_time": "2022-03-21T23:02:12.807",
+    "user": 2,
+    "content_type": 52,
+    "object_id": "11",
+    "object_repr": "Mapa mundi - 15 (inventory)",
+    "action_flag": 2,
+    "change_message": "Edici\u00f3n"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 976,
+  "fields": {
+    "action_time": "2022-03-21T23:15:52.603",
+    "user": 2,
+    "content_type": 50,
+    "object_id": "9",
+    "object_repr": "Carlos Miguel Mendez Lomas / 0401798477 2022-03-21 (entry)",
+    "action_flag": 1,
+    "change_message": "Creaci\u00f3n"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 977,
+  "fields": {
+    "action_time": "2022-03-21T23:15:52.609",
+    "user": 2,
+    "content_type": 52,
+    "object_id": "10",
+    "object_repr": "Diccionario did\u00e1ctico - 21 (inventory)",
     "action_flag": 2,
     "change_message": "Edici\u00f3n"
   }

@@ -1,6 +1,7 @@
 let input_date;
 let fv;
 let tblMaterials;
+let select_donor;
 
 const items = {
     details :{
@@ -115,7 +116,8 @@ document.addEventListener('DOMContentLoaded', function (e) {
                             message: 'El campo no puede estar vacío'
                         },
                     }
-                }
+                },
+                donor: {}
             },
         }
     )
@@ -161,6 +163,8 @@ document.addEventListener('DOMContentLoaded', function (e) {
                     'action': $('input[name="action"]').val(),
                     'items': JSON.stringify(items.details),
                     'num_doc': $('input[name="num_doc"]').val(),
+                    'is_donation': $('select[name="is_donation"]').val(),
+                    'donor': $('select[name="donor"]').val(),
                 },
                 function () {
                     location.href = url_refresh;
@@ -173,6 +177,12 @@ $(function () {
 
     input_date = $('input[name="date_entry"]');
     current_date = new moment().format("YYYY-MM-DD");
+    select_donor = $('select[name="donor"]');
+
+    $('.select2').select2({
+        theme: 'bootstrap4',
+        language: "es"
+    });
 
     input_date.datetimepicker({
         useCurrent: false,
@@ -245,4 +255,42 @@ $(function () {
             items.details.materials.splice(row.pos, 1);
             items.list_materials();
         });
+
+    select_donor.select2({
+        theme: "bootstrap4",
+        language: 'es',
+        allowClear: true,
+        ajax: {
+            delay: 250,
+            type: 'POST',
+            url: pathname,
+            data: function (params) {
+                return {
+                    term: params.term,
+                    action: 'search_donor'
+                };
+            },
+            processResults: function (data) {
+                return {
+                    results: data
+                };
+            },
+        },
+        placeholder: 'Número de cédula del estudiante',
+        minimumInputLength: 1,
+    }).on('select2:select', function (e) {
+            fv.revalidateField('donor');
+        })
+        .on('select2:clear', function (e) {
+            fv.revalidateField('donor');
+        });
+
+    $('#donor_area').hide();
+    $('select[name="is_donation"]').change( function () {
+        if ($(this).val() === 'True'){
+            $('#donor_area').show()
+        }else {
+            $('#donor_area').hide()
+        }
+    })
 });

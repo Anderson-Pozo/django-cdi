@@ -65,6 +65,10 @@ class MaterialForm(ModelForm):
 
 
 class EntryForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['donor'].queryset = Student.objects.none()
+
     class Meta:
         model = Entry
         fields = '__all__'
@@ -91,7 +95,17 @@ class EntryForm(ModelForm):
                     'placeholder': 'Ingrese el número de documento',
                     'readonly': True
                 }
-            )
+            ),
+            'donor': forms.Select(
+                attrs={
+                    'class': 'form-control select2',
+                    'style': 'width: 100%'
+                }
+            ),
+            'is_donation': forms.Select(
+                choices={(True, 'Sí'), (False, 'No')},
+                attrs={'class': 'form-control'}
+            ),
         }
 
     def save(self, commit=True):

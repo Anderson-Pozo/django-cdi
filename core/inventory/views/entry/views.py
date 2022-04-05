@@ -8,6 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 from core.inventory.forms import Entry, EntryForm, Material, EntryMaterial, Inventory
+from core.school.models import Student
 from core.security.mixins import PermissionMixin
 
 
@@ -67,10 +68,13 @@ class EntryCreateView(PermissionMixin, CreateView):
                 with transaction.atomic():
                     entry_mat = []
                     items = json.loads(request.POST['items'])
+                    print(request.POST)
                     entry = Entry(
                         date_entry=items['date_entry'],
                         employee=request.user,
-                        num_doc=request.POST['num_doc']
+                        num_doc=request.POST['num_doc'],
+                        donor_id=int(request.POST['donor']) if request.POST['donor'] else None,
+                        is_donation=request.POST['is_donation'],
                     )
                     entry.save()
 
@@ -94,6 +98,16 @@ class EntryCreateView(PermissionMixin, CreateView):
                     name__icontains=request.POST['term']
                 ).order_by('name').exclude(id__in=materials)[0:10]:
                     data.append(m.toJSON())
+            elif action == 'search_donor':
+                data = []
+                term = request.POST['term']
+                for i in Student.objects.filter(user__dni__contains=term)[0:10]:
+                    item = {
+                        'id': i.id,
+                        'text': f'{i.__str__() } / {i.get_repr()}',
+                        'data': i.toJSON()
+                    }
+                    data.append(item)
             else:
                 data['error'] = 'No se seleccionó una acción'
         except Exception as e:

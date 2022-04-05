@@ -1,7 +1,12 @@
 {% extends 'form.html' %}
 {% load static %}
+{% load widget_tweaks %}
 
 {% block head_form %}
+    <script src="{% static 'lib/select2-4.0.13/js/select2.min.js' %}"></script>
+    <script src="{% static 'lib/select2-4.0.13/js/i18n/es.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'lib/select2-4.0.13/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'lib/select2-4.0.13/css/select2-bootstrap4.min.css' %}">
     <link rel="stylesheet" href="{% static 'lib/bootstrap-touchspin-v4.2.5/css/jquery.bootstrap-touchspin.css' %}"/>
     <script src="{% static 'lib/bootstrap-touchspin-v4.2.5/js/jquery.bootstrap-touchspin.js' %}"></script>
     <script src="{% static 'lib/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.js' %}"></script>
@@ -37,7 +42,7 @@
                                 {{ form.date_entry }}
                             </div>
                         </div>
-                        <div class="col col-lg-4">
+                        <div class="col col-lg-3">
                             <div class="form-group">
                                 <label>{{ form.num_doc.label }}:</label>
                                 {{ form.num_doc }}
@@ -48,6 +53,22 @@
                                 <label>{{ form.employee.label }}:</label>
                                 <input disabled class="form-control" name="employee" id="employee"
                                        value="{{ request.user.first_name }} {{ request.user.last_name }}">
+                            </div>
+                        </div>
+                        <div class="col col-lg-1">
+                            <div class="form-group">
+                                <label>{{ form.is_donation.label }}:</label>
+                                {{ form.is_donation }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-6">
+                            <div class="form-group">
+                                <span id="donor_area">
+                                    <label>{{ form.donor.label }}:</label>
+                                    {{ form.donor }}
+                                </span>
                             </div>
                         </div>
                     </div>
